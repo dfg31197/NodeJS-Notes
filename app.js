@@ -4,8 +4,6 @@ const args = require('./scripts/static/arguements.js').ARGS;
 const yargs = require('yargs');
 
 
-console.log(yargs.argv)
-
 switch(yargs.argv._[0]) {
   case args.USER_DATA:
   Notes.getUserInfo();
@@ -19,6 +17,18 @@ switch(yargs.argv._[0]) {
   Notes.removeNote(yargs.argv.title);
   break;
 
+  case args.ALL:
+  Notes.showData();
+  break;
+
+  case args.UPDATE:
+  Notes.updateInfo(yargs.argv.title, yargs.argv.body);
+  break;
+
+  case args.CLEAR:
+  Notes.clearAll();
+  break;
+  
   default:
   console.log(`Notes: '${yargs.argv._[0]}' command not found.`);
 }
