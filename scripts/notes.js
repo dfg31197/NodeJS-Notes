@@ -93,6 +93,7 @@ module.exports.Note = {
       console.log("No notes present. Add a note using the 'add' command!")
       return;
     }
+    
     data.map((entry,index) => {
       console.log(
         `\n${index+1}. <h1>${entry.title}</h1>\n<p>${entry.body}</p>\n`
